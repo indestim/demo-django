@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado</title>
+</head>
+<body>
+    <h1>Listado de personas</h1>
+
+    {% if personas_list|length == 0 %}
+        <h3>No hay personas registradas</h3>
+    {% else %}
+        {% for persona in personas_list %}
+            <table>
+                <tr>
+                   <td>Nombre:</td>
+                   <td>{{ persona.nombre }}</td>
+                </tr>
+                <tr>
+                    <td>Apellidos:</td>
+                    <td>{{ persona.apellidos}}</td>
+                </tr>
+            </table>
+            <br>
+        {% endfor %}
+    {% endif %}
+    <br>
+    <a href="/registrar">Registrar persona</a>
+</body>
+</html>

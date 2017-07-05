@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Añadir persona</h1>
+    <a href="/">Ver listado de personas</a><br>
+    {% if message != "" %}
+    <h2>{{ message }}</h2><br>
+    {% endif %}
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Añadir persona</button>
+    </form>
+</body>
+</html>
